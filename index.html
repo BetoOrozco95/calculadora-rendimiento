@@ -3,14 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO -->
+    <meta name="description" content="Calculadora de rendimientos financieros. Compara tasas y rendimientos de diferentes instituciones financieras en México.">
+    <meta name="keywords" content="calculadora, rendimientos, inversiones, México, Nu, CETES, GBM, tasas de interés">
+    <meta name="author" content="Tu Nombre">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Calculadora de Rendimientos Financieros">
+    <meta property="og:description" content="Compara tasas y calcula rendimientos de diferentes instituciones financieras en México">
+    <meta property="og:type" content="website">
+    <!-- Mobile -->
+    <meta name="theme-color" content="#9C27B0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <title>¿Cuánto me da NU de rendimientos?</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 10px;
             background-color: #f5f5f5;
+            box-sizing: border-box;
+            width: 100%;
+            overflow-x: hidden;
+        }
+        
+        /* Asegurarnos que todos los elementos usen border-box */
+        * {
+            box-sizing: border-box;
         }
         
         .header {
@@ -38,23 +60,30 @@
 
         .calculator-container {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
             margin-top: 20px;
+            width: 100%;
+            padding: 0;
+            max-width: 100%;
         }
 
         .calculator-card {
             background: white;
-            padding: 20px;
+            padding: 15px;
             border-radius: 10px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            width: 300px;
+            flex: 1 1 300px;
+            max-width: 100%;
+            min-width: 280px;
+            margin: 0;
         }
 
         .calculator-header {
             text-align: center;
             padding: 15px;
-            margin: -20px -20px 20px -20px;
+            margin: -15px -15px 15px -15px;
             border-radius: 10px 10px 0 0;
             color: white;
         }
@@ -162,6 +191,84 @@
         #listaComparacion {
             max-height: 300px;
             overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px 5px;
+            }
+
+            .calculator-container {
+                gap: 10px;
+            }
+
+            .calculator-card {
+                flex: 1 1 100%;
+                min-width: unset;
+                padding: 12px;
+            }
+
+            .calculator-header {
+                margin: -12px -12px 12px -12px;
+            }
+
+            .input-group input,
+            .input-group select {
+                font-size: 16px;
+                padding: 12px 8px;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .header h1 {
+                font-size: 1.5em;
+            }
+
+            .calculate-btn {
+                padding: 12px 20px;
+                font-size: 16px;
+            }
+
+            .disclaimer {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 5px;
+            }
+
+            .calculator-container {
+                gap: 8px;
+            }
+
+            .calculator-card {
+                padding: 10px;
+            }
+
+            .calculator-header {
+                margin: -10px -10px 10px -10px;
+                padding: 10px;
+                font-size: 0.9em;
+            }
+
+            .header h1 {
+                font-size: 1.2em;
+            }
+
+            .update-text {
+                font-size: 0.8em;
+            }
+
+            .disclaimer {
+                margin: 20px 5px;
+            }
+
+            .comparison-item {
+                font-size: 0.9em;
+            }
         }
     </style>
 </head>
